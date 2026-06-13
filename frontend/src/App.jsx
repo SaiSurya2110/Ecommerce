@@ -14,16 +14,16 @@ const App = () => {
     },[])
 
     const addProduct = async (data)=>{
-        await API.post('/', data)
+        const res = await API.post('/', data)
         fetchProducts()
     }
     const deleteProduct = async (id)=>{
-        await API.delete(`/${id}`)
+        const res = await API.delete(`/${id}`)
         fetchProducts()
     }
   return (
     <div>
-        <h1>mern fullstack CURD on ECOMM</h1>
+        <h1>MERN FULLSTACK CRUD ON ECOMM</h1>
         <ProductForm addProduct={addProduct} />
         <ProductList products={products} 
         deleteProduct={deleteProduct}/>
