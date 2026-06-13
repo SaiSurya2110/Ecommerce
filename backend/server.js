@@ -5,7 +5,12 @@ const dotenv = require('dotenv').config()
 const cors = require('cors')
 const productRoutes = require('./routes/productRoutes')
 
-app.use(cors({origin:"https://ecommerce-rust-iota-65.vercel.app"}))
+app.use(cors({
+  origin: "https://ecommerce-rust-iota-65.vercel.app",
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
+}))
 app.use(express.json())
 
 connectDb()
